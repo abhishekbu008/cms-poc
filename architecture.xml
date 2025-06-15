@@ -1,0 +1,56 @@
+<mxfile userAgent="Mozilla/5.0" version="22.1.9">
+  <diagram id="arch" name="Updated POC Architecture">
+    <mxGraphModel dx="1544" dy="914" grid="1" gridSize="10" guides="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- React Native App -->
+        <mxCell id="2" value="React Native App" style="shape=mxgraph.azure.devices;fillColor=#0078D4;strokeColor=#ffffff;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="20" y="180" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Azure App Configuration -->
+        <mxCell id="3" value="Azure App Configuration (Config only)" style="shape=mxgraph.azure.general.configuration;fillColor=#0078D4;strokeColor=#ffffff;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="60" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Azure API Management -->
+        <mxCell id="4" value="Azure API Management (API Proxy)" style="shape=mxgraph.azure.enterprise.apiManagement;fillColor=#0078D4;strokeColor=#ffffff;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="220" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Azure Key Vault -->
+        <mxCell id="5" value="Azure Key Vault (Secrets)" style="shape=mxgraph.azure.security.keyVaults;fillColor=#0078D4;strokeColor=#ffffff;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="500" y="140" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Contentful CMS -->
+        <mxCell id="6" value="Contentful CMS (Headless)" style="ellipse;fillColor=#e63946;strokeColor=#ffffff;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="500" y="260" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- App to AppConfig -->
+        <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- App to APIM -->
+        <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="2" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- APIM to Key Vault -->
+        <mxCell id="9" value="Key Fetch" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- APIM to Contentful -->
+        <mxCell id="10" value="CMS API Call" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="4" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
